@@ -139,7 +139,15 @@ body {
 /* —— Intro —— */
 
 .intro {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
   padding: 2.75rem 0 2.5rem;
+}
+
+.intro-main {
+  min-width: 0;
 }
 
 .section-label {
@@ -168,6 +176,45 @@ body {
   font-weight: 300;
   color: var(--ink-soft);
   max-width: 58rem;
+}
+
+.intro-kpis {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.kpi {
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.kpi-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.kpi-value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+.kpi-insight {
+  margin: 0.45rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--ink-muted);
 }
 
 /* —— Tabs (Education / Experience) —— */
@@ -859,6 +906,20 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.65rem;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-kpis {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.25rem 1.5rem;
+  }
+
+  .kpi {
+    flex: 1 1 10rem;
   }
 
   .timeline-item {
